@@ -104,7 +104,7 @@ namespace GetMyCL
 
                 Console.WriteLine("total num of lines: {0}", numAddLines + numDeleteLines + numAfterChangeLines);
                 
-                string shortDescription = c.Description.Substring(0, 10);
+                string shortDescription = c.Description.Substring(0, c.Description.Length > 10 ? 10 : c.Description.Length);
 
                 sw.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}", c.Id, c.ModifiedDate, shortDescription, numAddChunks, numAddLines, numDeleteChunks, numDeleteLines, numChangeChunks, numBeforeChangeLines, numAfterChangeLines);
             }
